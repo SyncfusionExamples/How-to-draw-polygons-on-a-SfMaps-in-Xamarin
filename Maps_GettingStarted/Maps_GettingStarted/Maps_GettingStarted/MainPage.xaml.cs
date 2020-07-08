@@ -11,11 +11,9 @@ namespace Maps_GettingStarted
 {
     public partial class MainPage : ContentPage
     {
-        ViewModel model = new ViewModel();
         public MainPage()
         {
             InitializeComponent();
-            this.BindingContext = model;
         }
     }
 }
