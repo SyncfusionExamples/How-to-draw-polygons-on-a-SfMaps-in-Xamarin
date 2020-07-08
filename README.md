@@ -6,7 +6,7 @@ This demo sample explains how to draw the polygons on a SfMaps in Xamarin.Forms.
 
 Polygon is a two-dimensional surface stored as a sequence of points defining its exterior bounding ring and 0 or more interior rings. Polygons are always simple. Mostly the polygon shape type defines a group of land, water bodies, and other features that have a spatial extent.
 
-[Polygon shapes with maps](Output/Maps_polygon.png)
+![Polygon shapes with maps](Output/Maps_polygon.png)
 
 To get the desired output as shown above, please use the below XAML code to construct its UI
 
@@ -76,5 +76,9 @@ This polygon's points get from ViewModel class as shown in below
         }
     }
 
-    ```
+  ```
+# Troubleshooting
+
+## Path too long exception
+If you are facing path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project.
 
