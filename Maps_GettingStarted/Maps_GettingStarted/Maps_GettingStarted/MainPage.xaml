@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Maps_GettingStarted"
+             xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms"
+             x:Class="Maps_GettingStarted.MainPage">
+
+    <maps:SfMaps x:Name="sfmap" ZoomLevel="4">
+
+        <maps:SfMaps.Layers>
+
+            <maps:ImageryLayer LayerType="OSM" GeoCoordinates="30.9709225,-100.2187212" >
+
+                <maps:ImageryLayer.Sublayers>
+                    <maps:ShapeFileLayer x:Name="sublayer1" ShapeType="Polygon" Points="{Binding SubLayer1}" >
+                        <maps:ShapeFileLayer.ShapeSettings>
+                            <maps:ShapeSetting ShapeFill="Blue" ShapeStroke="DarkBlue" 
+                                               ShapeStrokeThickness="4" />
+                        </maps:ShapeFileLayer.ShapeSettings>
+                    </maps:ShapeFileLayer>
+                    <maps:ShapeFileLayer x:Name="subLayer2" ShapeType="Polygon" Points="{Binding SubLayer2}">
+                        <maps:ShapeFileLayer.ShapeSettings>
+                            <maps:ShapeSetting ShapeFill="Orange" ShapeStroke="Red"
+                                               ShapeStrokeThickness="4" />
+                        </maps:ShapeFileLayer.ShapeSettings>
+                    </maps:ShapeFileLayer>
+                </maps:ImageryLayer.Sublayers>
+
+            </maps:ImageryLayer>
+
+        </maps:SfMaps.Layers>
+
+    </maps:SfMaps>
+</ContentPage>
