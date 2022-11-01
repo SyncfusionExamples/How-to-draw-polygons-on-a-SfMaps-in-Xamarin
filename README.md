@@ -1,82 +1,58 @@
 # How to draw the polygons on a SfMaps in Xamarin.Forms
 
-This demo sample explains how to draw the polygons on a SfMaps in Xamarin.Forms.
+This repository contains sample for how to draw polygons in the [Syncfusion Xamarin.Forms Maps](https://help.syncfusion.com/xamarin/maps/getting-started) control. **Polygon** is a two-dimensional surface stored as a sequence of points defining its exterior bounding ring and 0 or more interior rings. Polygons are always simple. Mostly the polygon shape type defines a group of land, water bodies, and other features that have a spatial extent.
 
-## Polygon
-
-Polygon is a two-dimensional surface stored as a sequence of points defining its exterior bounding ring and 0 or more interior rings. Polygons are always simple. Mostly the polygon shape type defines a group of land, water bodies, and other features that have a spatial extent.
+Please refer the KB through this [link](https://www.syncfusion.com/kb/11783/how-to-add-ploygon-shape-in-xamarin-forms-maps-sfmaps) to get the desired output as shown below.
 
 ![Polygon shapes with maps](Output/Maps_polygon.png)
 
-To get the desired output as shown above, please use the below XAML code to construct its UI
+## Syncfusion controls
 
-**[XAML]**
+This project used the following Syncfusion control(s):
+* [SfMaps](https://www.syncfusion.com/xamarin-ui-controls/xamarin-maps)
 
-```
-<maps:SfMaps x:Name="sfmap" ZoomLevel="4">
-        <maps:SfMaps.Layers>
-            <maps:ImageryLayer LayerType="OSM" GeoCoordinates="30.9709225,-100.2187212" >
-                <maps:ImageryLayer.Sublayers>
-                    <maps:ShapeFileLayer  ShapeType="Polygon" Points="{Binding SubLayer1}" >
-                        <maps:ShapeFileLayer.ShapeSettings>
-                            <maps:ShapeSetting ShapeFill="Blue" ShapeStroke="DarkBlue" 
-                                               ShapeStrokeThickness="4" />
-                        </maps:ShapeFileLayer.ShapeSettings>
-                    </maps:ShapeFileLayer>
-                    <maps:ShapeFileLayer  ShapeType="Polygon" Points="{Binding SubLayer2}">
-                        <maps:ShapeFileLayer.ShapeSettings>
-                            <maps:ShapeSetting ShapeFill="Orange" ShapeStroke="Red"
-                                               ShapeStrokeThickness="4" />
-                        </maps:ShapeFileLayer.ShapeSettings>
-                    </maps:ShapeFileLayer>
-                </maps:ImageryLayer.Sublayers>
-            </maps:ImageryLayer>
-        </maps:SfMaps.Layers>
-    </maps:SfMaps>
+## Supported platforms
 
-```
-This polygon's points get from ViewModel class as shown in below
+| Platforms | Supported versions |
+| --------- | ------------------ |
+| Android   | API level 21 and later versions |
+| iOS | iOS 9.0 and later versions |
+| UWP | Windows 10 devices |
 
-**[C#]**
+## Requirements to run the sample
 
-```
- public class ViewModel
-    {
-        public ObservableCollection<Point> SubLayer1
-        {
-            get; set;
-        }
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)
 
-        public ObservableCollection<Point> SubLayer2
-        {
-            get; set;
-        }
-        public ViewModel()
-        {
+Refer to the following link for more details - [System Requirements](https://help.syncfusion.com/xamarin/system-requirements)
 
-            SubLayer1 = new ObservableCollection<Point>()
-            {
-                new Point(37.042972,-109.085003),
-                new Point(40.992567,-109.021030),
-                new Point(40.968420,-102.048065),
-                new Point(36.991893,-102.144024),
-                new Point(37.042972,-109.085003)
-            };
-            SubLayer2 = new ObservableCollection<Point>()
-            {
-              new Point(41.04621681452063, -104.0625),
-              new Point(41.04621681452063, -102.0849609375),
-              new Point(40.01078714046552, -102.041015625),
-              new Point(40.04443758460856, -95.44921875),
-              new Point(42.48830197960227, -96.3720703125),
-              new Point(43.03677585761058, -98.4375),
-              new Point(43.068887774169625, -104.0625),
-              new Point(41.04621681452063, -104.0625),
-            };
-        }
-    }
+## How to run the sample
 
-  ```
+1. Clone the sample and open it in Visual Studio.
+
+   *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
+   
+2. Register your license key in the App.xaml.cs file as demonstrated in the following code.
+
+		public App()
+		{
+			//Register Syncfusion license
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+	
+			InitializeComponent();
+	
+			MainPage = new App1.MainPage();
+		}
+		
+	Refer to this [link](https://help.syncfusion.com/xamarin/licensing/overview) for more details.
+	
+3. Clean and build the application.
+
+4. Run the application.
+
+## License
+
+Syncfusion has no liability for any damage or consequence that may arise by using or viewing the samples. The samples are for demonstrative purposes, and if you choose to use or access the samples, you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion’s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion’s samples.
+
 # Troubleshooting
 
 ## Path too long exception
